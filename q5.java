@@ -2,30 +2,23 @@
 public class q5 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int i,j,c;
-for (i=1; ;i++)
-{
-	c=0;
-	for (j=1;j<=20;j++)
+		long n=20;
+		System.out.println(lcm(n));
+			}
+	public static long lcm(long n)
 	{
-		if (i%j!=0)
+		long c=1;
+		for (long i=1;i<=n;i++)
 		{
-			break;
+			c=(c*i)/(gcd(c,i));
 		}
+		return c;
+	}
+	public static long gcd (long a,long b)
+	{
+		if (a%b!=0)
+			return gcd(b,a%b);
 		else
-		{
-			c++;
-		}
-	}
-	if (c==20)
-	{
-		System.out.println(i);
-		break;
-	}
-
+			return b;
 }
-System.out.println(i);
-	}
-
 }
