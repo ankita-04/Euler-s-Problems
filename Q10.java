@@ -1,28 +1,23 @@
-import java.math.BigInteger;
 public class Q10 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-BigInteger sum=new BigInteger("2");
-boolean k=true;
-for (int i=3;i<2000000;i++)
+		long a=2;
+for (long i=3;i<2000000;i++)
 {
-	double a=Math.sqrt((double)i);
-	for (int j=2;j<=a;j++)
+	int b=0;
+	for (int j=2;j<=Math.sqrt(i);j++)
 	{
 		if (i%j==0)
 		{
-			k=false;
+			b=1;
 			break;
-		}}
-		 if (k)
-		{
-			sum=sum.add(BigInteger.valueOf(i));
 		}
-		 k=true;
 	}
-
-System.out.println(sum);
+	if (b==0)
+	{
+		a=a+i;
 	}
-
+}
+System.out.println("Sum required:"+a);
+}
 }
